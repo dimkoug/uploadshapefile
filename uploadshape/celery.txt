@@ -1,6 +1,10 @@
+To start celery worker run:
 celery -A uploadshape worker --loglevel=info
 
-dbf
-prj
-shp
-shx
+
+To upload correctly you need these files:
+
+file.dbf
+file.prj
+file.shp
+file.shx
