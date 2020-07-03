@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+  <div class="col-12">
+    <form action="{% url 'upload-shape' %}" method="post" enctype="multipart/form-data">
+      Select shapefile:
+      {% csrf_token %}
+      <input type="file" name="shape" id="shape" multiple>
+      <input type="submit" class="btn btn-primary" value="Upload Shapefile" name="submit">
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+  Total Uploaded Geometries : {{geometries}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div id='map' style="width:100%;height:500px;"></div>
+  </div>
+</div>
+
+
+{% endblock %}

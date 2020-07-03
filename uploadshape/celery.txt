@@ -1,0 +1,6 @@
+celery -A uploadshape worker --loglevel=info
+
+dbf
+prj
+shp
+shx

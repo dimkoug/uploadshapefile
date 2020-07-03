@@ -1,0 +1,40 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link href="{% static 'bootstrap4/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'bootstrap4/css/cookiealert.css' %}">
+
+
+    <link rel="stylesheet" href=" {% static 'bootstrap4/css/font-awesome.min.css' %}">
+
+    <script src="{% static 'bootstrap4/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'bootstrap4/js/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap4/js/bootstrap.min.js' %}"></script>
+    <script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3&amp&key={{google_maps_key}}"></script>
+    <script src="{% static 'js/map.js' %}"></script>
+  </head>
+  <body>
+    <main role="main">
+      <div class="container">
+        <div class="row py-2">
+          <div class="col-12">
+            {% for message in messages %}
+              <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                {{ message }}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        {% block content %}{% endblock %}
+      </div> <!-- /container -->
+    </main>
+  </body>
+</html>
