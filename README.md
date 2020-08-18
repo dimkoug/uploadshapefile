@@ -16,17 +16,20 @@ Quick start
 
 4. Install packages from requirements.txt file
 
-5. Create settings_local.py with settings from settings_local_sample.py
+5. Install redis server on your operating system
 
-6. Run `python manage.py migrate`
+7. Create settings_local.py with settings from settings_local_sample.py
 
-7. Start the development server and visit http://127.0.0.1:8000/
+8. Run `python manage.py migrate`
 
-8. In new tab re activate the virtual enviroment to start celery worker::
+9. Start the development server and visit http://127.0.0.1:8000/
+
+10. In new tab re activate the virtual enviroment to start celery worker::
     celery -A uploadshape worker --loglevel=info
 
 
-9. Don't forget to write your google api key in settings_local.py file
+11. Don't forget to write your google api key in settings_local.py file
 
+12. Srid  of the shapefile must be 4326
 
 This project use postgresql database
